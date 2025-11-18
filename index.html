@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alimentador Automático para Pássaros com Arduino - Grupo 7</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Alimentador Automático para Pássaros com Arduino</h1>
+    </header>
+
+    <main>
+        <section id="introducao">
+            <h2>Descrição do Projeto</h2>
+
+            <p>
+            Este projeto apresenta um alimentador automático de pássaros usando
+            Arduino, servomotor e um reservatório simples. Ele permite liberar
+            pequenas porções de alimento em horários definidos.
+            </p>
+
+            <div class="artigos-flex">
+                <article>
+                    <h3>Motivação</h3>
+                    <p>
+                    A motivação para este projeto surgiu da necessidade de alimentar
+                    pássaros de forma prática e eficiente, especialmente para pessoas
+                    que têm uma rotina agitada ou viajam com frequência. O alimentador
+                    automático visa garantir que os pássaros recebam sua alimentação
+                    diária sem a necessidade de intervenção manual constante.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Objetivo</h3>
+                    <p>
+                    O objetivo deste projeto é desenvolver um sistema simples e
+                    acessível que utilize o Arduino para controlar um servo motor,
+                    permitindo a liberação automática de ração para pássaros em
+                    horários programados. O sistema deve ser fácil de montar, operar e
+                    manter, proporcionando uma solução eficaz para a alimentação de
+                    pássaros.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Contextualização</h3>
+                    <p>
+                    Com o aumento do interesse em automação residencial e a
+                    popularização do Arduino como plataforma de prototipagem, este
+                    projeto se insere no contexto de soluções tecnológicas para o
+                    cotidiano. Alimentadores automáticos já são comuns para pets
+                    domésticos, mas a adaptação para pássaros apresenta desafios
+                    específicos, como o tamanho do reservatório e a precisão na
+                    liberação da ração.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Esquema Conceitual</h3>
+                    <p>
+                    O sistema é composto por um microcontrolador Arduino que controla
+                    um servo motor SG90. O servo motor é responsável por abrir e
+                    fechar uma pequena porta que libera a ração armazenada em um
+                    reservatório. A liberação da ração é programada para ocorrer em
+                    intervalos de tempo específicos, garantindo que os pássaros sejam
+                    alimentados regularmente sem a necessidade de intervenção manual.
+                    </p>
+                </article>
+            </div>
+        </section>
+        
+        <section id="palavras-chave">
+            <h2>Palavras-Chave</h2>
+            <div class="palavras-chave-projeto">
+            <span>Arduino</span>
+            <span>Servo motor</span>
+            <span>Automação</span>
+            <span>Alimentador de pássaros</span>
+            <span>SG90</span>
+            <span>Eletrônica</span>
+            </div>
+        </section>
+        
+        <section id="autores">
+            <h2>Autores</h2>
+            <ul class="lista-autores" role="list">
+            <li>Ana Beatriz</li>
+            <li>Bruna Ferreira</li>
+            <li>Caio Martins</li>
+            <li>Kelvia Santos</li>
+            <li>Luís Felipe</li>
+            <li>Priscila Pontes</li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Componentes e Suprimentos</h2>
+            <ul class="lista-materiais" role="list">
+                <li>**Microcontrolador:** Arduino Uno ou Nano</li>
+                <li>**Atuador:** Servo motor SG90</li>
+                <li>Jumpers (cabos de conexão)</li>
+                <li>Fonte de alimentação de 5V</li>
+                <li>Reservatório para ração (recipiente)</li>
+                <li>Estrutura de suporte (em madeira, plástico ou impressa em 3D)</li>
+            </ul>
+        </section>
+
+        <section id="plataforma">
+            <h2>Aplicativos e Plataforma</h2>
+
+            <p>
+            Liste os aplicativos, plataformas ou ferramentas que foram usados no
+            desenvolvimento do projeto incluindo a versão de cada um.
+            </p>
+        </section>
+
+        <section id="passo-a-passo">
+            <h2>Passo a passo</h2>
+            <p>
+            Crie um passo a passo para a montagem do projeto. Cada passo deve
+            conter imagens e uma descrição detalhada da ação. Certifique-se de que
+            as instruções sejam claras o suficiente para que qualquer pessoa possa
+            replicar o projeto sem problemas.
+            </p>
+
+            <ol role="list">
+            <li>
+                <strong>Montagem do Circuito:</strong> Conecte o servo motor ao
+                Arduino conforme o esquema de ligação. O fio vermelho do servo vai
+                para o 5V, o fio marrom para o GND e o fio laranja para o pino 9 do
+                Arduino.
+            </li>
+            <li>
+                <strong>Construção do Reservatório:</strong> Monte a estrutura do
+                alimentador utilizando o material escolhido (madeira, plástico ou
+                impressão 3D). Certifique-se de que o reservatório esteja bem fixo
+                e que a porta controlada pelo servo motor possa abrir e fechar
+                livremente.
+            </li>
+            <li>
+                <strong>Programação do Arduino:</strong> Abra a IDE do Arduino e
+                insira o código fornecido na seção de código. Faça upload do código
+                para o Arduino.
+            </li>
+            <li>
+                <strong>Teste do Sistema:</strong> Alimente o reservatório com ração
+                e ligue o sistema. Observe se o servo motor está abrindo e fechando
+                a porta corretamente nos intervalos programados.
+            </li>
+            <li>
+                <strong>Ajustes Finais:</strong> Caso necessário, ajuste os ângulos
+                de abertura e fechamento no código para garantir que a ração seja
+                liberada adequadamente.
+            </li>
+
+        </section>
+
+        <section id="codigo">
+            <h2>💻 Código Arduino</h2>
+            <figure class="code-box">
+            <figcaption>
+                Código para controle do Servo Motor e temporização (IDE Arduino)
+            </figcaption>
+            <pre>
+                <code>
+                O código final será inserido aqui.
+                </code>
+                </pre>
+            </figure>
+        </section>
+
+        <section id="download">
+            <h2>Download do projeto</h2>
+            <a
+            class="download-link"
+            href="projeto_alimentador.zip"
+            download="projeto_alimentador_automatico_arduino.zip"
+            >
+            Baixar Projeto Completo
+            </a>
+        </section>
+
+        <section id="video">
+            <h2>Vídeo de Demonstração</h2>
+            <iframe
+            width="800"
+            height="400"
+            src="https://www.youtube.com/embed/lkiLYdVwnIk"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="Vídeo de demonstração do Alimentador Automático para Pássaros com Arduino"
+            >
+            </iframe>
+        </section>
+
+        <section id="licoes">
+            <h2>Problemas Enfrentados e Lições Aprendidas</h2>
+            <p>
+            Durante o desenvolvimento do projeto, enfrentamos desafios
+            relacionados à calibração do servo motor e à construção da estrutura
+            do alimentador. Aprendemos a importância de **testar cada componente
+            individualmente** antes da montagem final e a ajustar o ângulo do
+            servo motor (0° e 90°) para garantir a liberação e o fechamento
+            corretos da ração.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+      <p>© 2025 - Projeto Arduino para Alimentação de Pássaros - Grupo 7</p>
+    </footer>
+  </body>
+</html>
