@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alimentador Automático para Pássaros com Arduino - Grupo 7</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Alimentador Automático para Pássaros com Arduino</h1>
+    </header>
+
+    <main>
+        <section id="introducao">
+            <h2>Descrição do Projeto</h2>
+
+            <p>
+            Este projeto apresenta um alimentador automático de pássaros usando
+            Arduino, servomotor e um reservatório simples. Ele permite liberar
+            pequenas porções de alimento em horários definidos.
+            </p>
+
+            <div class="artigos-flex">
+                <article>
+                    <h3>Motivação</h3>
+                    <p>
+                    A motivação para este projeto surgiu da necessidade de alimentar
+                    pássaros de forma prática e eficiente, especialmente para pessoas
+                    que têm uma rotina agitada ou viajam com frequência. O alimentador
+                    automático visa garantir que os pássaros recebam sua alimentação
+                    diária sem a necessidade de intervenção manual constante.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Objetivo</h3>
+                    <p>
+                    O objetivo deste projeto é desenvolver um sistema simples e acessível que utilize o Arduino para controlar um servo motor, permitindo a liberação automática de ração para pássaros em horários programados. O sistema deve ser fácil de montar, operar e manter, proporcionando uma solução eficaz para a alimentação de pássaros. Proporcionar uma maneira prática e sustentável de alimentar aves, especialmente em ambientes urbanos, sem exigir presença constante do cuidador.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Contextualização</h3>
+                    <p>
+                    Com o aumento do interesse em automação residencial e a
+                    popularização do Arduino como plataforma de prototipagem, este
+                    projeto se insere no contexto de soluções tecnológicas para o
+                    cotidiano. Alimentadores automáticos já são comuns para pets
+                    domésticos, mas a adaptação para pássaros apresenta desafios
+                    específicos, como o tamanho do reservatório e a precisão na
+                    liberação da ração.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Esquema Conceitual</h3>
+                    <p>
+                    O sistema é composto por um microcontrolador Arduino que controla
+                    um servo motor SG90. O servo motor é responsável por abrir e
+                    fechar uma pequena porta que libera a ração armazenada em um
+                    reservatório. A liberação da ração é programada para ocorrer em
+                    intervalos de tempo específicos, garantindo que os pássaros sejam
+                    alimentados regularmente sem a necessidade de intervenção manual.
+                    </p>
+                </article>
+            </div>
+        </section>
+        
+        <section id="palavras-chave">
+            <h2>Palavras-Chave</h2>
+            <div class="palavras-chave-projeto">
+            <span>Arduino</span>
+            <span>Servo motor</span>
+            <span>Automação</span>
+            <span>Alimentador de pássaros</span>
+            <span>SG90</span>
+            <span>Eletrônica</span>
+            </div>
+        </section>
+        
+        <section id="autores">
+            <h2>Autores</h2>
+            <ul class="lista-autores" role="list">
+            <li>Ana Beatriz</li>
+            <li>Bruna Ferreira</li>
+            <li>Caio Martins</li>
+            <li>Kelvia Santos</li>
+            <li>Luís Felipe</li>
+            <li>Priscila Pontes</li>
+            </ul>
+        </section>
+
+        <section id="materiais">
+            <h2>Componentes e Suprimentos</h2>
+            <ul class="lista-materiais" role="list">
+                <li>Arduino Uno;</li>
+                <li>Servo motor;</li>
+                <li>Botão;</li>
+                <li>Resistor de 10k ohms;</li>
+                <li>Protoboard;</li>
+                <li>Jumpers;</li>   
+                <li>Fonte de alimentação de 5V;</li>
+                <li>Suporte (de papelão, madeira ou plástico);</li>
+                <li>Potenciômetro;</li>
+                <li>LCD 16x2 (I2C);</li>
+                <li>LED.</li>
+            </ul>
+        </section>
+
+        <section id="plataforma">
+            <h2>Aplicativos e Plataformas</h2>
+
+            <a href="https://www.robocore.net/" target="_blank" rel="noopener noreferrer">
+                robocore
+            </a>
+            <a href="https://www.tinkercad.com/" target="_blank" rel="noopener noreferrer">
+                Tinkercad
+            </a>
+            <a href="https://www.arduino.cc/en/software" target="_blank" rel="noopener noreferrer">
+                Arduino IDE 2.3.6
+            </a>
+        </section>
+
+        <section id="passo-a-passo">
+            <h2>Passo a passo</h2>
+            <p>
+            Crie um passo a passo para a montagem do projeto. Cada passo deve
+            conter imagens e uma descrição detalhada da ação. Certifique-se de que
+            as instruções sejam claras o suficiente para que qualquer pessoa possa
+            replicar o projeto sem problemas.
+            </p>
+
+            <ol role="list">
+                <li>
+                    <strong>Configuração da Protoboard e Alimentação:</strong> 
+                    <div class="details">
+                        <img src="./images/think.jpeg" alt="">
+                        <p>O projeto utiliza os trilhos laterais da Protoboard para a distribuição de energia (barramento de energia):
+
+                            <ol>
+                                <li>
+                                    Distribuição de 5V: O pino 5V do Arduino est    á conectado ao trilho positivo (+) da Protoboard.
+                                </li>
+                                <li style="margin-top: 10px;">
+                                    Distribuição de Terra (GND): O pino GND do Arduino está conectado ao trilho negativo (-) da Protoboard.
+                                </li>
+                            </ol>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Conexão do Display LCD I2C:</strong>
+                    <div class="details">
+                        <img src="./images/display1.jpeg" style="width: 400px;" alt="">
+                        <p>
+                        O display LCD é usado para a contagem regressiva e feedback de status, e é conectado aos pinos de comunicação I2C do Arduino:
+                            <ol>
+                                <li>Alimentação do Display:
+
+                                    O pino VCC do display está conectado à linha 5V (+) da Protoboard.
+
+                                    O pino GND do display está conectado à linha GND (-) da Protoboard.</li>
+                                    <li style="margin-top: 10px;">Comunicação I2C:
+
+                                    O pino SDA (Dados) do display está conectado ao pino analógico A4 do Arduino.
+
+                                    O pino SCL (Clock) do display está conectado ao pino analógico A5 do Arduino.</li>
+                            </ol>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Conexão do Servo Motor:</strong> 
+                    <div class="details">
+                        <img src="./images/motor.jpeg" alt="">
+                        <p>
+                        O servo motor é o atuador que dispensa a ração, e é controlado por um sinal PWM no pino digital 9:
+                            <ol>
+                                <ol>Alimentação do Servo Motor:
+
+                                    <li style="margin-top: 10px;">O Fio Vermelho (VCC) do Servo está conectado à linha 5V (+) da Protoboard.
+
+                                    O Fio Marrom/Preto (GND) do Servo está conectado à linha GND (-) da Protoboard.</li>
+                                    
+                                    <li style="margin-top: 10px;">Sinal de Controle:
+
+                                    O Fio Laranja/Amarelo (Sinal) do Servo está conectado diretamente ao pino digital D9 do Arduino.
+                                </li>
+                            </ol>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Conexão do LED Indicador:</strong>
+                    <div class="details">
+                        <img src="./images/botao.jpeg" alt="">
+                        <p>
+                        O botão é usado para acionar manualmente a alimentação e resetar o cronômetro, utilizando o pino digital 8:
+                            <ol>
+                                <li>
+                                    Posicionamento: O botão está inserido na Protoboard,    atravessando a ranhura central.
+                                </li>
+                                <li style="margin-top: 10px;">
+                                    Conexão de Sinal: Um lado do botão está conectado ao pino digital D8 do Arduino.
+                                </li>
+                                <li  style="margin-top: 10px;">
+                                    Conexão de Aterramento: O lado oposto do botão está conectado à linha **GND (-) ** da Protoboard.
+
+                                    Funcionamento: Devido ao INPUT_PULLUP no código, o pino D8 é mantido em HIGH (ativo). Pressionar o botão conecta D8 ao GND, o que faz com que o Arduino leia LOW e dispare a ação.
+                                </li>
+                            </ol>
+                        </p>
+                    </div>
+                </li>
+            </ol>
+
+        </section>
+
+        <section id="codigo">
+            <h2>💻 Código Arduino</h2>
+            <figure class="code-box">
+            <figcaption>
+                Código para controle do Servo Motor e temporização (IDE Arduino)
+            </figcaption>
+            <pre>
+                <code>
+#include <LiquidCrystal_I2C.h>
+#include <Servo.h>
+
+LiquidCrystal_I2C lcd_1(0x27, 16, 2);
+
+Servo meuServo;
+const int SERVO_PIN = 9;
+const int POS_DEFAULT = 180;
+const int POS_ACIONAL = 90;
+const long TEMPO_ACAO_SERVO = 3000;
+
+const long duracaoContagem = 10000;
+unsigned long tempoInicio;
+unsigned long tempoAcionamentoServo = 0;
+
+const int BOTAO_PIN = 8;
+int estadoBotaoAnterior = LOW;
+
+int ultimoSegundo = -1;
+const int centerCol = (16 - 5) / 2;
+
+void initialize_lcd();
+void acionarAlimentador();
+
+void setup() {
+  lcd_1.init();
+  lcd_1.backlight();
+  lcd_1.clear();
+
+  pinMode(BOTAO_PIN, INPUT_PULLUP);
+
+  meuServo.attach(SERVO_PIN);
+  meuServo.write(POS_DEFAULT);
+
+  initialize_lcd();
+  tempoInicio = millis();
+}
+
+void initialize_lcd(){
+  lcd_1.setCursor(0, 0);
+  lcd_1.print("A prox refeicao e:");
+}
+
+void acionarAlimentador() {
+    meuServo.write(POS_ACIONAL);
+    tempoAcionamentoServo = millis();
+
+    lcd_1.setCursor(centerCol - 2, 1);
+    lcd_1.print("SERVindo...");
+}
+
+
+void loop() {
+  unsigned long tempoAtual = millis();
+
+  int estadoBotaoAtual = digitalRead(BOTAO_PIN);
+
+  if (estadoBotaoAtual == LOW && estadoBotaoAnterior == HIGH) {
+
+    acionarAlimentador();
+
+    tempoInicio = tempoAtual;
+    ultimoSegundo = -1;
+  }
+
+  estadoBotaoAnterior = estadoBotaoAtual;
+
+  if (tempoAcionamentoServo > 0 && tempoAtual - tempoAcionamentoServo >= TEMPO_ACAO_SERVO) {
+      meuServo.write(POS_DEFAULT);
+      tempoAcionamentoServo = 0;
+      ultimoSegundo = -1;
+  }
+
+  long tempoDecorrido = tempoAtual - tempoInicio;
+  long tempoRestante = duracaoContagem - tempoDecorrido;
+
+  if (tempoRestante <= 0) {
+    tempoRestante = 0;
+
+    if (tempoAcionamentoServo == 0) {
+        acionarAlimentador();
+    }
+
+  }
+
+  if (tempoAcionamentoServo == 0) {
+    int totalSegundos = tempoRestante / 1000;
+    int minutos = totalSegundos / 60;
+    int segundos = totalSegundos % 60;
+
+    if (segundos != ultimoSegundo) {
+
+      char bufferTempo[6];
+      sprintf(bufferTempo, "%02d:%02d", minutos, segundos);
+
+      lcd_1.setCursor(centerCol, 1);
+      lcd_1.print(bufferTempo);
+
+      ultimoSegundo = segundos;
+    }
+  }
+
+  delay(10);
+}
+                </code>
+                </pre>
+            </figure>
+        </section>
+
+        <section id="download">
+            <h2>Download do projeto</h2>
+            <a
+                class="download-link"
+                href="./files/Projeto_SD.zip" 
+                download="Projeto_SD.zip"
+            >
+                Baixar Projeto Completo
+            </a>
+        </section>
+
+        <section id="video">
+            <h2>Vídeo de Demonstração</h2>
+            <iframe
+            width="800"
+            height="400"
+            src="https://www.youtube.com/embed/lkiLYdVwnIk"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="Vídeo de demonstração do Alimentador Automático para Pássaros com Arduino"
+            >
+            </iframe>
+        </section>
+
+        <section id="licoes">
+            <h2>Problemas Enfrentados e Lições Aprendidas</h2>
+            <p>
+            Durante o desenvolvimento do projeto, enfrentamos desafios
+            relacionados à falta de materiais, curto tempo . Aprendemos a importância de testar cada componente
+            individualmente antes da montagem final e a ajustar o ângulo do
+            servo motor (0° e 90°) para garantir a liberação e o fechamento
+            corretos da ração.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+      <p>© 2025 - Projeto Arduino para Alimentação de Pássaros - Grupo 7</p>
+    </footer>
+  </body>
+</html>
